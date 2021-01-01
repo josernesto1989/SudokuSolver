@@ -1,6 +1,7 @@
 #include "sudoku.h"
 #include <QDebug>
 #include <QColor>
+#include <QTest>
 #include <QFont>
 
 Sudoku::Sudoku(QObject *parent) :
@@ -75,7 +76,7 @@ void Sudoku::solve()
     while(posible && unfinish)
     {
         emit layoutChanged();
-        //qDebug()<<toString();
+//        QTest::qWait(100);
         if(x<0)
         {
             if(x==-1)
